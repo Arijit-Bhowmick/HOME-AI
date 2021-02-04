@@ -1,0 +1,35 @@
+{
+    "on port three" : "",
+    "off port three" : "",
+
+    "on port four" : "",
+    "off port four" : "",
+
+    "on port five" : "",
+    "off port five" : "",
+
+    "on port six" : "",
+    "off port six" : "",
+
+    "on port seven" : "",
+    "off port seven" : "",
+
+    "on port eight" : "",
+    "off port eight" : "",
+
+    "on port nine" : "",
+    "off port nine" : "",
+
+    "on port ten" : "",
+    "off port ten" : "",
+
+    "on port eleven" : "",
+    "off port eleven" : "",
+
+    "initialize chatbot": "start chatbot",
+    "start chatbot": "start chatbot",
+    "open chatting": "start chatbot",
+    "exit chatbot": "exit chattbot"
+
+
+}
