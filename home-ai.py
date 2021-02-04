@@ -4,37 +4,36 @@ import pyttsx3
 import speech_recognizer
 import arduino_controller
 import chatbot
+import commands_creater
 
 
 # Environmental Commands
 
-json_command_data_open = open("environmental_commands.json", "r")
-json_command_data = json_command_data_open.read()
-json_command_data_open.close()
+# Arduino Commands Control
 
-# Arduino Commands
+arduino_commands = commands_creater.Arduino_commands() # Only returns two items
+arduino_commands_names = arduino_commands[0] # List of Arduino Commands
+arduino_key_value_dict = arduino_commands[1] # List of Arduino Commands and Key Values 
 
-json_command_data_open = open("environmental_arduino_commands.json", "r")
-json_arduino_command_data = json_command_data_open.read()
-json_command_data_open.close()
 
 # Chatbot Commands
 
-json_command_data_open = open("environmental_chatbot_commands.json", "r")
-json_chatbot_command_data = json_command_data_open.read()
-json_command_data_open.close()
+bot_commands = commands_creater.Bot_commands() # Only returns three items
+bot_commands_names = bot_commands[0] # List of supported bot Commands
+bot_system_commands_names = bot_commands[1] # List of all system commands that the bot can perform
+bot_key_value_dict = bot_commands[2] # List of Bot Commands and system_command Values 
 
 # Load json data
 
-command_data = json.loads(json_command_data)
+#command_data = json.loads(json_command_data)
 
 # Load Arduino commands data
 
-arduino_command_data = json.loads(json_arduino_command_data)
+#arduino_command_data = json.loads(json_arduino_command_data)
 
 # Load Chatbot commands data
 
-chatbot_command_data = json.loads(json_chatbot_command_data)
+#chatbot_command_data = json.loads(json_chatbot_command_data)
 
 #################
 
@@ -48,7 +47,13 @@ def filter_command():
     print(command)
 
     ai_name_calling_lst = open("commands_data/ai_calling_data.txt", "r").readlines()
+
+    # Sample Command -> Hey Friday, turn off light
+
     for num in range (len(ai_name_calling_lst)):
+
+        # Replaces a new line character if there is any between the calling names
+
         ai_name_calling_lst[num].replace("\n", "")
         
 
@@ -61,44 +66,60 @@ def filter_command():
 
     #if (("OK FRIDAY" in command.upper()) == True) or (("HELLO FRIDAY" in command.upper()) == True):
 
-        print("PLEASE PROVIDE A COMMAND TO CONTINUE\nTalk")
+        #print("PLEASE PROVIDE A COMMAND TO CONTINUE\nTalk")
 
-        command = speech_recognizer.speech_2_text()
-        command = "on port eight"
-        #command = "off port eight"
-        if (command in command_data) == True:
+        #command = speech_recognizer.speech_2_text()
+        #command = "on port eight"
+        #command = 
+        
+            for saved_arduino_command in arduino_commands_names:
 
             
-            print(command)
+            #print(command)
 
             ## Arduino Command Area
 
-            if (command in arduino_command_data) == True:
+                if (saved_arduino_command in command) == True:
 
                 # return pin_number and pin_state to initilize
 
-                return [arduino_command_data[command], "arduino"]
+                    return [arduino_key_value_dict[saved_arduino_command], "arduino"] # format -> [{03:1}, "arduino"]
+                else:
+                    continue
 
 ## *****************************************************************
 
+            # For bot command Action
+
+            for saved_bot_command in bot_commands_names:
+
+                if (saved_bot_command in command) == True:
+
+                    return [bot_key_value_dict[saved_bot_command], "bot_system_command"] # Format -> ["exit()", "bot_system_command"]
+                else:
+                    continue
 
             
+#################################################################################
+
+            # If both of the above doesn't work then it will be
+            # redirected to Chatbot, and the chatbot will result
+            # the output if any.
 
             ## Chatbot command area
 
-            else:
 
                 # return command to initilize in chatbot
+            command = command
+            response = chatbot.chatbot_response(command)
 
-                response = chatbot.chatbot_response(command)
-
-                return [response, "chatbot"]
+            return [response, "chatbot"]
 
         else:
             
             # return command to initilize in chatbot
 
-            response = chatbot.chatbot_response(command)
+            response = chatbot.chatbot_response(command.replace(ai_call_name, "")) # Removes the First ai calling command from the string
 
             return [response, "chatbot"]
 
@@ -108,7 +129,7 @@ def filter_command():
 
 
 
-        print("Time over, thanks")
+        # print("Time over, thanks")
 
     else:
         
