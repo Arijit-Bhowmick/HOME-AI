@@ -46,15 +46,9 @@ def filter_command():
 
     print(command)
 
-    ai_name_calling_lst = open("commands_data/ai_calling_data.txt", "r").readlines()
+    ai_name_calling_lst = commands_creater.AI_name_calling_lst() # AI Names list
 
     # Sample Command -> Hey Friday, turn off light
-
-    for num in range (len(ai_name_calling_lst)):
-
-        # Replaces a new line character if there is any between the calling names
-
-        ai_name_calling_lst[num].replace("\n", "")
         
 
 
@@ -113,15 +107,17 @@ def filter_command():
             command = command
             response = chatbot.chatbot_response(command)
 
-            return [response, "chatbot"]
+            return [response, "chatbot"] # format -> ["response_from_chat_bot"]
 
         else:
             
             # return command to initilize in chatbot
 
-            response = chatbot.chatbot_response(command.replace(ai_call_name, "")) # Removes the First ai calling command from the string
+            #response = chatbot.chatbot_response(command.replace(ai_call_name, "")) # Removes the First ai calling command from the string
 
-            return [response, "chatbot"]
+            #return [response, "chatbot"]
+
+            continue
 
 
 
