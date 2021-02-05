@@ -1,4 +1,4 @@
 # # is used for Commenting
-Shutdown yourself : exit()
+Shutdown yourself : exit() : Return Message
 Shutdown computer : None
 Logoff : None

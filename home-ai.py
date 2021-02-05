@@ -5,7 +5,7 @@ import speech_recognizer
 import arduino_controller
 import chatbot
 import commands_creater
-
+import command_performer
 
 # Environmental Commands
 
@@ -41,7 +41,7 @@ def filter_command():
 
     #while True:
     
-    #command = speech_recognizer.speech_2_text()
+    #command = speech_recognizer.speech_2_text() # For recognizing the voice to perform task
     command = "Hey Friday, turn off light"
 
     print(command)
@@ -104,10 +104,10 @@ def filter_command():
 
 
                 # return command to initilize in chatbot
-            command = command
-            response = chatbot.chatbot_response(command)
+            #command = command.replace(ai_call_name, "") # Removes the AI Calling Name
+            response = chatbot.chatbot_response(command.replace(ai_call_name, "")) # Removes the First ai calling command from the string
 
-            return [response, "chatbot"] # format -> ["response_from_chat_bot"]
+            return [response, "chatbot"] # format -> ["response_from_chat_bot", "chatbot"]
 
         else:
             
@@ -129,61 +129,42 @@ def filter_command():
 
     else:
         
-        return ["nothing", "NONE"]
-
-def init_arduino_func(filter_command):
-
-    arduino_pin_details = filter_command
-    arduino_pin_data = arduino_pin_details[0] # Dictionary data
-
-    # arduino_pin_data.keys() -> pin number
-    # arduino_pin_data.values() -> pin state
-
-    #arduino_pin_number = arduino_pin_data
-
-# Recognizing the commands as arduino commands
-
-    if arduino_pin_details[1] == "arduino":
-
-        # commiting the pin state
-
-        arduino_controller.init_pin(arduino_pin_data)
+        return ["Not Hearing", "nothing"]
 
 
-        
-
-def chatbot_response_audio(filter_command):
-
-    chatbot_command_details = filter_command
-    command_identifier = chatbot_command_details[1]
-    command = chatbot_command_details[0]
-
-    if command_identifier == "chatbot":
-
-        # pass the command to chatbot and it will provide a response
-
-        #chatbot_response_text = chatbot.chatbot_response(command)
-        #pyttsx3.speak(chatbot_response_text)
-        pyttsx3.speak(command)
 
 def main():
 
     try :
+        while True:
+            # The Data that are to be returned
+            # Example:
+            # For Arduino it Would be : [{03:1}, "arduino"]
+            # For bot_for system functions : ["exit()", "bot_system_command"]
+            # For Chat_bot it would be : ["response_from_chat_bot", "chatbot"]
+            # For not hearing it would be : ["Not Hearing", "nothing"]
+            # 
+            command_data = filter_command()
+
+            if command_data[1] == "arduino":
+
+                command_performer.init_arduino_func(command_data)
+
+            elif command_data[1] == "bot_system_command":
+
+                command_performer.bot_system_command_performer(command_data)
 
 
-        filter_data = filter_command()
+            elif command_data[1] == "chatbot":
 
-        if filter_data[1] == "arduino":
+                command_performer.chatbot_response_audio(command_data)
 
-            init_arduino_func(filter_data)
+            elif command_data[1] == "nothing":
 
-        elif filter_data[1] == "chatbot":
-
-
-            chatbot_response_audio(filter_data)
-
-        else:
-            print("none heard")
+                continue
+            
+            else:
+                print("none heard")
 
     except KeyboardInterrupt:
 
