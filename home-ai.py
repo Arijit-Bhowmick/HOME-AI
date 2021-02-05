@@ -41,10 +41,10 @@ def filter_command():
 
     #while True:
     
-    #command = speech_recognizer.speech_2_text().upper() # For recognizing the voice to perform task
-    #command = "Hey Friday, on port three" #testing for aurdino
-    #command = "Hey Friday, How are you" # Testing for chat_bot
-    command = "Hey Friday, Open Explorer".upper()
+    command = speech_recognizer.speech_2_text().upper() # For recognizing the voice to perform task
+    #command = "Hey Friday, on port three".upper() #testing for aurdino
+    #command = "Hey Friday, How are you".upper() # Testing for chat_bot
+    #command = "Hey Friday, Open Explorer".upper()
 
     print(command)
 
@@ -97,7 +97,7 @@ def filter_command():
             for saved_bot_command in bot_commands_names:
 
                 if (saved_bot_command.upper() in command) == True:
-                    
+
                     #print(bot_key_value_dict[saved_bot_command])
 
                     return [bot_key_value_dict[saved_bot_command], "bot_system_command"] # Format -> ["exit()", "bot_system_command"]
@@ -176,7 +176,7 @@ def main():
             
             else:
                 print("none heard")
-            exit()
+            #exit()
     except KeyboardInterrupt:
 
         print("Thankyou For USing ME !!!")
