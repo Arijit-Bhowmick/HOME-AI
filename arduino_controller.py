@@ -21,7 +21,7 @@ def init_pin(arduino_new_pin_data):
 	# The port that is used by arduino
 	# it varies over operating system and available ports
 
-	arduino_port = "COM3" # Here windows port is using
+	arduino_port = "COM3" # The port which the Arduino is using
 
 	board = pyfirmata.Arduino(arduino_port)
 	#a=[1,0,1,1,0,1,0,1,0,1,0,1,0,1,1,0,0,1,0]

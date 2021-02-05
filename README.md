@@ -1,6 +1,8 @@
 # HOME-AI
 Just a College 1st Sem Physics Project
 
+<img src="Images/ai-loader.gif">
+
 # Members :
 
 Arijit Bhowmick<br>
