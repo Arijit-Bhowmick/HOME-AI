@@ -2,6 +2,7 @@ import pyfirmata
 import json
 import commands_creater
 import command_performer
+import pyttsx3
 
 arduino_port = "COM3" # The port which the Arduino is using
 board = pyfirmata.Arduino(arduino_port)
@@ -15,16 +16,16 @@ def init_pin(arduino_new_pin_data):
 	
 	
 	
-	print(f"in arduino controller --> {arduino_states}")
+	#print(f"in arduino controller --> {arduino_states}")
 
 	for pre_pin_number in arduino_new_pin_data.keys():
     	
 		#print(type(pre_pin_number))
     		
 		if (pre_pin_number in arduino_states) == True:
-			print("Hello")
+
 			# Checks if the new pin is in the arduino previous pin data
-			print(f"Arduino pin data {arduino_new_pin_data}\nArduino pin state --> {arduino_states}")
+			#print(f"Arduino pin data {arduino_new_pin_data}\nArduino pin state --> {arduino_states}")
 			#if arduino_states[pre_pin_number] == arduino_new_pin_data[pre_pin_number]:
     		#			# if previous pin state is equals current pin state
 			#	print(f"error area  {arduino_states}")
@@ -35,12 +36,13 @@ def init_pin(arduino_new_pin_data):
 					# Toggle the State of the pins of the pin number
 
 			arduino_states[pre_pin_number] = arduino_new_pin_data[pre_pin_number]
-			print(arduino_states[pre_pin_number])
+			#print(arduino_states[pre_pin_number])
 
 			arduino_pin_controller([pre_pin_number, arduino_states[pre_pin_number]])
 	
 	# Forward the dictionary to write it to the text file
-	print(arduino_states)
+	#print(arduino_states)
+	pyttsx3.speak("Task Successfully Performed")
 	command_performer.write_arduino_pin_data(arduino_states)
 
 

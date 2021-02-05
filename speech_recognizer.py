@@ -1,5 +1,6 @@
 #import library
 
+from threading import TIMEOUT_MAX
 import speech_recognition as sr
 import json
 
@@ -13,7 +14,7 @@ def speech_2_text():
     
     with sr.Microphone() as source:
         #print("PLEASE PROVIDE A COMMAND TO CONTINUE\nTalk")
-        audio_text = r.listen(source)
+        audio_text = r.listen(source, phrase_time_limit=6)
         #print("Time over, thanks")
     # recoginize_() method will throw a request error if the API is unreachable, hence using exception handling
         
@@ -21,9 +22,8 @@ def speech_2_text():
             # using google speech recognition
             command = r.recognize_google(audio_text)
 
-            print("Text: "+command)
+#            print("Text: "+command)
             return (command)
         except:
-            print("Sorry, I did not get that")
+            #print("Sorry, I did not get that")
             return ("NONE")
-

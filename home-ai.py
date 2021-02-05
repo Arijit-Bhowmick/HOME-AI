@@ -63,7 +63,7 @@ def filter_command():
 
         
         if (ai_call_name.upper() in command) == True:
-            print("ai_call_name",ai_call_name)
+            #print("ai_call_name",ai_call_name)
 
             
 
@@ -85,7 +85,7 @@ def filter_command():
                 if (saved_arduino_command.upper() in command) == True:
 
                 # return pin_number and pin_state to initilize
-                    print("Arduino command")
+                    #print("Arduino command")
                     return [arduino_key_value_dict[saved_arduino_command], "arduino"] # format -> [{03:1}, "arduino"]
                 else:
                     continue

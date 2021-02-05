@@ -40,7 +40,7 @@ def init_arduino_func(arduino_command_data):
         # commiting the pin state
         # process the dictionary data
         # Example pin_dic = {"3": "1"}
-        print(arduino_pin_data)
+        #print(arduino_pin_data)
 
         arduino_controller.init_pin(arduino_pin_data)
 
@@ -77,4 +77,6 @@ def bot_system_command_performer(bot_system_command_data):
         # System commands can easily set in the bot_commands.txt file
         # For Linux or Windows systems of the choice
         print("Bot System Command Successfully Performed")
+        
         os.system(bot_system_command_details[0]) # perform System commands
+        pyttsx3.speak("Task Successfully Performed") # Speak the following line after initilizing the command
