@@ -73,6 +73,7 @@ def arduino_previous_pin_state():
     # List of all pin states of arduino
 
     arduino_pre_pin_state = open("commands_data/arduino_previous_pin_state.txt", "r").readlines()
+    
     arduino_pin_state_dict = {}
 
     for pin_state in arduino_pre_pin_state:
@@ -90,7 +91,7 @@ def arduino_previous_pin_state():
             arduino_pin_state_dict.update({pin_num_and_state[0]:pin_num_and_state[1]}) # {"3":"0"}
     
     # Return the dictionary of pin number and it's state
-
+    print(f"readed from file -> {arduino_pin_state_dict}")
     return arduino_pin_state_dict # Dictionary {"key":"value"}
 
 def ai_name_parse():

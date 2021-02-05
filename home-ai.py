@@ -42,7 +42,7 @@ def filter_command():
     #while True:
     
     command = speech_recognizer.speech_2_text().upper() # For recognizing the voice to perform task
-    #command = "Hey Friday, on port three".upper() #testing for aurdino
+    #command = "Hey Friday, off port three".upper() #testing for aurdino
     #command = "Hey Friday, How are you".upper() # Testing for chat_bot
     #command = "Hey Friday, Open Explorer".upper()
 

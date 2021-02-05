@@ -7,11 +7,12 @@ def write_arduino_pin_data(arduino_pin_data):
     # Writes the Data of pin numbers and it's state to arduino_previous_pin_state.txt
 
     arduino_pin_data_dict_to_str = str(arduino_pin_data).replace("{'", "").replace("'}","").replace("': '", " : ").replace("', '", "\n")
-
+    #print(arduino_pin_data_dict_to_str)
     # Write the new data to the text file
 
     arduino_pre_pin_state = open("commands_data/arduino_previous_state.txt", "w")
     arduino_pre_pin_state.write(arduino_pin_data_dict_to_str)
+    #print(arduino_pin_data_dict_to_str)
     arduino_pre_pin_state.close()
 
 
@@ -38,8 +39,8 @@ def init_arduino_func(arduino_command_data):
 
         # commiting the pin state
         # process the dictionary data
-        # Example pin_dic = {"3":"1"}
-        print("Arduino Command performed")
+        # Example pin_dic = {"3": "1"}
+        print(arduino_pin_data)
 
         arduino_controller.init_pin(arduino_pin_data)
 
