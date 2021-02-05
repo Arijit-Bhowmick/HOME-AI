@@ -20,17 +20,17 @@ def Arduino_commands():
 
         elif ard_comd[0] != "#":
 
-            arduino_cmd_data_unrefined_1 = ard_comd.replace("\n","").split(" > ") # [on port three][03 : 1]
+            arduino_cmd_data_unrefined_1 = ard_comd.replace("\n","").split(" > ") # ["on port three"]["3 : 1"]
             arduino_command_names += [arduino_cmd_data_unrefined_1[0]] # ["on port three"]
 
-            arduino_cmd_key_and_value = arduino_cmd_data_unrefined_1[1].split(" : ") # [03][1]
-            arduino_cmd_key = arduino_cmd_key_and_value[0] # 03
-            arduino_cmd_value = arduino_cmd_key_and_value[1] # 1
+            arduino_cmd_key_and_value = arduino_cmd_data_unrefined_1[1].split(" : ") # ["3"]["1"]
+            arduino_cmd_key = arduino_cmd_key_and_value[0] # "3"
+            arduino_cmd_value = arduino_cmd_key_and_value[1] # "1"
 
 
             # Create Dictionary
 
-            arduino_cmd_key_and_value.update({arduino_cmd_data_unrefined_1[0]:{arduino_cmd_key:arduino_cmd_value}}) # {{"on port three":{03:1}}}
+            arduino_cmd_key_and_value.update({arduino_cmd_data_unrefined_1[0]:{arduino_cmd_key:arduino_cmd_value}}) # {{"on port three":{"3":"1"}}}
 
     return [arduino_command_names, arduino_cmd_key_and_value]
 
@@ -67,6 +67,33 @@ def Bot_commands():
             bot_cmd_key_and_value.update({bot_cmd_data_unrefined_1[0]:bot_cmd_data_unrefined_1[1]}) # {"Shutdown yourself":"exit()"}
 
     return [bot_command_names, bot_system_command, bot_cmd_key_and_value]
+
+def arduino_previous_pin_state():
+
+    # List of all pin states of arduino
+
+    arduino_pre_pin_state = open("commands_data/arduino_previous_pin_state.txt", "r").readlines()
+    arduino_pin_state_dict = {}
+
+    for pin_state in arduino_pre_pin_state:
+
+        if pin_state[0] == "#":
+            continue
+
+        elif pin_state[0] != "#":
+
+            # Example data
+            # "3 : 0" --> String Value
+
+            pin_num_and_state = pin_state.replace("\n", "").split(" : ") # result -> ["3", "0"]
+
+            arduino_pin_state_dict.update({pin_num_and_state[0]:pin_num_and_state[1]}) # {"3":"0"}
+    
+    # Return the dictionary of pin number and it's state
+
+    return arduino_pin_state_dict # Dictionary {"key":"value"}
+
+
 
 def AI_name_calling_lst():
 
