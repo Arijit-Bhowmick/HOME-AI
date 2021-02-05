@@ -93,7 +93,39 @@ def arduino_previous_pin_state():
 
     return arduino_pin_state_dict # Dictionary {"key":"value"}
 
+def ai_name_parse():
 
+    # Read the Name of the AI that you want to use in this project
+
+    ai_name_list = open("commands_data/ai_name.txt", "r").readlines()
+    ai_name_line_counter = 0
+    for ai_name_identifier in ai_name_list:
+
+        ai_name_line_counter += 1 # Count the unwanted lines from the ai_name.txt
+
+        if ai_name_identifier.startswith("ai_name"):
+
+
+            # if the line start sith ai_name then only 
+            # the AI name is accepted
+            #
+            # Format -> "ai_name = F.R.I.D.A.Y"
+
+            ai_name = ai_name_identifier.replace("\n", "").split(" = ")
+            return(ai_name[1]) # Return : "F.R.I.D.A.Y"
+
+        else:
+
+            if ai_name_line_counter == len(ai_name_list):
+
+                # If no supported ai_name variable is setup
+                # the it will return "AI" as the name of AI
+
+                return("AI") # If "AI" as the name of the AI
+
+            else:
+
+                continue
 
 def AI_name_calling_lst():
 

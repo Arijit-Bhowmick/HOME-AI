@@ -1,6 +1,9 @@
 
 import os
 import aiml
+import commands_creater
+
+ai_name = commands_creater.ai_name_parse() # The name of the AI that is to be used
 
 def chatbot_response(command):
 
@@ -33,7 +36,7 @@ def chatbot_response(command):
     	#		return ("break")
 		#else:
 		response = k.respond(input_text)
-		print("F.R.I.D.A.Y  --> ", response)
+		print(f"{ai_name}  --> {response}") # Response Format -> F.R.I.D.A.Y --> I am good
 			
 		return response
 
