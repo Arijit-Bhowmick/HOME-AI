@@ -29,13 +29,13 @@ def chatbot_response(command):
 		#input_text = input("USER --> ")
 		input_text = command
 
-		if (("exit" in input_text.lower()) == True) or (("close" in input_text.lower()) == True):
-    			return ("break")
-		else:
-			response = k.respond(input_text)
-			print("F.R.I.D.A.Y  --> ", response)
+		#if (("exit" in input_text.lower()) == True) or (("close" in input_text.lower()) == True):
+    	#		return ("break")
+		#else:
+		response = k.respond(input_text)
+		print("F.R.I.D.A.Y  --> ", response)
 			
-			return response
+		return response
 
 	except KeyboardInterrupt:
 		print("EXIT\nThankyou for using me")
