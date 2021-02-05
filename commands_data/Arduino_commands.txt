@@ -5,6 +5,8 @@ turn on light > 3 : 1
 turn off light > 3 : 0
 on port four > 4 : 1
 off port four > 4 : 0
+turn on fan > 4 : 1
+turn off fan > 4 : 0
 on port five > 5 : 1
 off port five > 5 : 0
 on port six > 6 : 1
