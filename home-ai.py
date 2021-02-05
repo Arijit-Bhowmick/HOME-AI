@@ -46,7 +46,7 @@ def filter_command():
     #command = "Hey Friday, How are you".upper() # Testing for chat_bot
     #command = "Hey Friday, Open Explorer".upper()
 
-    print(command)
+    print(f"USER --> {command}")
 
     ai_name_calling_lst = commands_creater.AI_name_calling_lst() # AI Names list
 
