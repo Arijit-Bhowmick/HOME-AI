@@ -59,7 +59,8 @@ def chatbot_response_audio(chatbot_command_data):
 
         #chatbot_response_text = chatbot.chatbot_response(command)
         #pyttsx3.speak(chatbot_response_text)
-        print(chat_bot_reply)
+        
+        #print(chat_bot_reply)
 
         # Convert the Text to Speech
         # So that it seems to be that
