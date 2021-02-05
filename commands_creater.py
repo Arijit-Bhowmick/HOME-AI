@@ -4,7 +4,7 @@ def Arduino_commands():
 
     arduino_commands = open("commands_data/Arduino_commands.txt", "r").readlines()
     arduino_command_names = []
-    arduino_cmd_key_and_value = {} # Dictionary
+    arduino_cmd_key_and_value_dict = {} # Dictionary
 
     for ard_comd in arduino_commands:
         # Example List
@@ -29,10 +29,10 @@ def Arduino_commands():
 
 
             # Create Dictionary
+            print()
+            arduino_cmd_key_and_value_dict.update({arduino_cmd_data_unrefined_1[0]:{arduino_cmd_key:arduino_cmd_value}}) # {{"on port three":{"3":"1"}}}
 
-            arduino_cmd_key_and_value.update({arduino_cmd_data_unrefined_1[0]:{arduino_cmd_key:arduino_cmd_value}}) # {{"on port three":{"3":"1"}}}
-
-    return [arduino_command_names, arduino_cmd_key_and_value]
+    return [arduino_command_names, arduino_cmd_key_and_value_dict]
 
 def Bot_commands():
     
@@ -141,5 +141,6 @@ def AI_name_calling_lst():
         elif ai_calling_name[0] != "#":
 
             ai_name_list += [ai_calling_name.replace("\n", "")]
+#    print(ai_name_list)
 
-    return ai_calling_name # list of all calling names for the ai
+    return ai_name_list # list of all calling names for the ai

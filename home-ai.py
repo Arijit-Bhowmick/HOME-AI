@@ -41,20 +41,29 @@ def filter_command():
 
     #while True:
     
-    #command = speech_recognizer.speech_2_text() # For recognizing the voice to perform task
-    command = "Hey Friday, turn off light"
+    command = speech_recognizer.speech_2_text() # For recognizing the voice to perform task
+    #command = "Hey Friday, on port three" #testing for aurdino
+    #command = "Hey Friday, How are you" # Testing for chat_bot
+    #command = "Hey Friday, Shutdown yourself"
 
     print(command)
 
     ai_name_calling_lst = commands_creater.AI_name_calling_lst() # AI Names list
 
-    # Sample Command -> Hey Friday, turn off light
+    # Sample Command -> Hey Friday, on port three
         
+    if command == "NONE":
+        # if nothing is said to it
+        #print("none command initilized")
+
+        return ["Not Hearing", "nothing"]
 
 
     for ai_call_name in ai_name_calling_lst:
 
-        if (ai_call_name in command.upper()) == True:
+        
+        if (ai_call_name.upper() in command.upper()) == True:
+            print("ai_call_name",ai_call_name)
 
             
 
@@ -76,7 +85,7 @@ def filter_command():
                 if (saved_arduino_command in command) == True:
 
                 # return pin_number and pin_state to initilize
-
+                    print("Arduino command")
                     return [arduino_key_value_dict[saved_arduino_command], "arduino"] # format -> [{03:1}, "arduino"]
                 else:
                     continue
