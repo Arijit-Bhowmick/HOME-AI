@@ -17,7 +17,7 @@ def chatbot_response(command):
 	# otherwise loads the aiml from the xml files
 	# and saves the brain dump.
 	if os.path.exists(BRAIN_FILE):
-		print("Loading from brain file: " + BRAIN_FILE)
+		#print("Loading from brain file: " + BRAIN_FILE)
 		k.loadBrain(BRAIN_FILE)
 	else:
 		print("Parsing aiml files")
