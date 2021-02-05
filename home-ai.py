@@ -41,10 +41,10 @@ def filter_command():
 
     #while True:
     
-    command = speech_recognizer.speech_2_text() # For recognizing the voice to perform task
+    #command = speech_recognizer.speech_2_text().upper() # For recognizing the voice to perform task
     #command = "Hey Friday, on port three" #testing for aurdino
     #command = "Hey Friday, How are you" # Testing for chat_bot
-    #command = "Hey Friday, Shutdown yourself"
+    command = "Hey Friday, Open Explorer".upper()
 
     print(command)
 
@@ -62,7 +62,7 @@ def filter_command():
     for ai_call_name in ai_name_calling_lst:
 
         
-        if (ai_call_name.upper() in command.upper()) == True:
+        if (ai_call_name.upper() in command) == True:
             print("ai_call_name",ai_call_name)
 
             
@@ -82,7 +82,7 @@ def filter_command():
 
             ## Arduino Command Area
 
-                if (saved_arduino_command in command) == True:
+                if (saved_arduino_command.upper() in command) == True:
 
                 # return pin_number and pin_state to initilize
                     print("Arduino command")
@@ -96,7 +96,9 @@ def filter_command():
 
             for saved_bot_command in bot_commands_names:
 
-                if (saved_bot_command in command) == True:
+                if (saved_bot_command.upper() in command) == True:
+                    
+                    #print(bot_key_value_dict[saved_bot_command])
 
                     return [bot_key_value_dict[saved_bot_command], "bot_system_command"] # Format -> ["exit()", "bot_system_command"]
                 else:
@@ -174,7 +176,7 @@ def main():
             
             else:
                 print("none heard")
-
+            exit()
     except KeyboardInterrupt:
 
         print("Thankyou For USing ME !!!")

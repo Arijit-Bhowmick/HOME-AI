@@ -1,4 +1,5 @@
 # # is used for Commenting
 Shutdown yourself : exit()
+Open Explorer : start Explorer
 Shutdown computer : None
 Logoff : None
