@@ -1,3 +1,4 @@
+import os
 import time
 import json
 import pyttsx3
@@ -148,6 +149,10 @@ def main():
 
     try :
         while True:
+
+            command_performer.clear_screen() # Clears the Screen after every command
+            commands_creater.banner() # Create the banner for this project
+
             # The Data that are to be returned
             # Example:
             # For Arduino it Would be : [{03:1}, "arduino"]

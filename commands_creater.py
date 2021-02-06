@@ -145,3 +145,28 @@ def AI_name_calling_lst():
 #    print(ai_name_list)
 
     return ai_name_list # list of all calling names for the ai
+
+
+def banner():
+
+    # The banner that is to be used in the Project
+
+    print("""
+██╗  ██╗ ██████╗ ███╗   ███╗███████╗               █████╗ ██╗
+██║  ██║██╔═══██╗████╗ ████║██╔════╝              ██╔══██╗██║
+███████║██║   ██║██╔████╔██║█████╗      █████╗    ███████║██║
+██╔══██║██║   ██║██║╚██╔╝██║██╔══╝      ╚════╝    ██╔══██║██║
+██║  ██║╚██████╔╝██║ ╚═╝ ██║███████╗              ██║  ██║██║
+╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝              ╚═╝  ╚═╝╚═╝
+
+Project is available on : https://github.com/Arijit-Bhowmick/HOME-AI
+
+- BY
+
+ARIJIT BHOWMICK [https://github.com/Arijit-Bhowmick]
+MADHAV BHARGAVA [https://github.com/madhavbhargava]
+VIDHI PATEL     [https://github.com/VidhiPattel]
+OSHEEN RAWAT    [https://github.com/osheen-rawat]
+PRATYUSHA GIRI  [https://github.com/2002pratyusha]
+    
+    """)

@@ -1,6 +1,7 @@
 import os
 import arduino_controller
 import pyttsx3
+import platform
 
 def write_arduino_pin_data(arduino_pin_data):
 
@@ -81,3 +82,27 @@ def bot_system_command_performer(bot_system_command_data):
         
         os.system(bot_system_command_details[0]) # perform System commands
         pyttsx3.speak("Task Successfully Performed") # Speak the following line after initilizing the command
+
+def clear_screen():
+
+    # This function is used to clear the screen
+    platform_name = platform.system().upper() # Return the name of the system (WINDOWS or LINUX)
+
+    if platform_name == "WINDOWS":
+
+        # If the system is Windows then
+
+        os.system("cls")
+
+    elif platform_name == "LINUX":
+
+        # If platform is Linux then
+
+        os.system("clear")
+
+    else:
+
+        # If Any other platform is used
+        # which is not recognized
+
+        print("\n"*20) # Prints 20 new line character to let it show like, it clears the screen
