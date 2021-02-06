@@ -106,3 +106,10 @@ def clear_screen():
         # which is not recognized
 
         print("\n"*20) # Prints 20 new line character to let it show like, it clears the screen
+
+def exit_program():
+
+    # Print the below line and exit the program
+
+    print("Thankyou For USing ME !!!")
+    exit()

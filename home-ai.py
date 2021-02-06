@@ -182,10 +182,13 @@ def main():
             else:
                 print("none heard")
             #exit()
+            
     except KeyboardInterrupt:
 
-        print("Thankyou For USing ME !!!")
-        exit()
+        # Exit the program if Keyboad Interupt occur
+        # Usually Keyboard Interrupt is given with "CTRL+C" key function
+
+        command_performer.exit_program()
 
 
 if __name__ == "__main__":
