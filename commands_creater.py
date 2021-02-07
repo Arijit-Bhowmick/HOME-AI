@@ -152,12 +152,15 @@ def AI_name_calling_lst():
 
     return ai_name_list # list of all calling names for the ai
 
+# The name of the user using the device
+# where this software is to be used
+
+username = getpass.getuser()
+
+
 def user_name():
 
-    # The name of the user using the device
-    # where this software is to be used
-
-    username = getpass.getuser()
+    
     # username = "Your desired username you want to set"
 
     return username # Returns the username of the user

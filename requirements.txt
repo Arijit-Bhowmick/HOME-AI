@@ -4,3 +4,4 @@ aiml
 pyfirmata
 SpeechRecognition
 PyAudio
+serial

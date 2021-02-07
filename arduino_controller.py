@@ -3,9 +3,20 @@ import json
 import commands_creater
 import command_performer
 import pyttsx3
+import serial
 
-arduino_port = "COM3" # The port which the Arduino is using
-board = pyfirmata.Arduino(arduino_port)
+try:
+	arduino_port = "COM3" # The port which the Arduino is using
+	board = pyfirmata.Arduino(arduino_port)
+
+except serial.serialutil.SerialException:
+
+	# If Arduino Board is not connected with your device
+	# the it will show the message and exit the program
+	commands_creater.banner() # Create the banner for this project
+	print("!!! Please Connect Your Arduino Board with this Device !!!\n\n")
+
+	command_performer.exit_program()
 
 def init_pin(arduino_new_pin_data):
 
@@ -53,11 +64,6 @@ def arduino_pin_controller(pin_number_and_state):
 	# The port that is used by arduino
 	# it varies over operating system and available ports
 
-	# arduino_port = "COM3" # The port which the Arduino is using
-
-	# board = pyfirmata.Arduino(arduino_port)
-	#a=[1,0,1,1,0,1,0,1,0,1,0,1,0,1,1,0,0,1,0]
-	#b="01010111011001010010000001100001011100100110010100100000011000010110111001101111011011100111100101101101011011110111010101110011"
 
 	# Write current state in pins
 
