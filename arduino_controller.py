@@ -63,39 +63,3 @@ def arduino_pin_controller(pin_number_and_state):
 
 		
 	board.digital[int(pin_number_and_state[0])].write(int(pin_number_and_state[1]))
-
-    		
-
-
-	#while True:
-
-		#user_input = input("Please enter a sleep time as interger value : >> ")
-		#user_input = int(user_input)
-
-	## From here we can on/off a current device state
-
-	#board.digital[int(pin_number)].write(int(pin_state))
-
-	## other detailed works
-
-	## Digital Pins
-	
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))
-
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))
-	# board.digital[int(pin_number)].write(int(pin_state))

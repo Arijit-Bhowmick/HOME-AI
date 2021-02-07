@@ -1,3 +1,6 @@
+import getpass
+
+
 def Arduino_commands():
 
 # Arduino Commands
@@ -142,9 +145,22 @@ def AI_name_calling_lst():
         elif ai_calling_name[0] != "#":
 
             ai_name_list += [ai_calling_name.replace("\n", "")]
+
+        else:
+            continue
 #    print(ai_name_list)
 
     return ai_name_list # list of all calling names for the ai
+
+def user_name():
+
+    # The name of the user using the device
+    # where this software is to be used
+
+    username = getpass.getuser()
+    # username = "Your desired username you want to set"
+
+    return username # Returns the username of the user
 
 
 def banner():
