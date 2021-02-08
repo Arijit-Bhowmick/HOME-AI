@@ -15,7 +15,7 @@ PRATYUSHA GIRI  [https://github.com/2002pratyusha]<br>
 
 # Documentation
 
-The Documentation of this project has been uploaded <a href="Documentation/HOME-AI_documentation.pdf">here</a>
+The Documentation of this project has been uploaded <a href="Documentation/HOME-AI_documentation.pdf">here</a><br>
 The usage and other details related to this project are mentioned in this <a href="Documentation/HOME-AI_documentation.pdf">documentation</a>
 
 # SUPPORT THIS PROJECT
