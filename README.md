@@ -3,7 +3,7 @@ Just a College 1st Sem Physics Project
 
 Project is available on : <i>https://github.com/Arijit-Bhowmick/HOME-AI</i>
 
-<img src="Images/ai-loader.gif">
+<img src="Images/Program_Screenshot.png">
 
 # Members:
 
