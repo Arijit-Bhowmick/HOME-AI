@@ -3,7 +3,9 @@ Just a College 1st Sem Physics Project
 
 Project is available on : <i>https://github.com/Arijit-Bhowmick/HOME-AI</i>
 
-- BY
+<img src="Images/ai-loader.gif">
+
+# Members:
 
 ARIJIT BHOWMICK [https://github.com/Arijit-Bhowmick]<br>
 MADHAV BHARGAVA [https://github.com/madhavbhargava]<br>
@@ -11,12 +13,9 @@ VIDHI PATEL     [https://github.com/VidhiPattel]<br>
 OSHEEN RAWAT    [https://github.com/osheen-rawat]<br>
 PRATYUSHA GIRI  [https://github.com/2002pratyusha]<br>
 
-<img src="Images/ai-loader.gif">
+# SUPPORT THIS PROJECT
 
-# Members :
+## Do you want to provide support ?
 
-Arijit Bhowmick<br>
-Madhav Bhargava<br>
-Vidhi Patel<br>
-Osheen Rawat<br>
-Pratyusha Giri
+Then you can do so from <a href="https://arijit-bhowmick.github.io/supportive_webpages/support.html">here</a>
+
