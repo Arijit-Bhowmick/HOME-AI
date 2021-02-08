@@ -13,6 +13,11 @@ VIDHI PATEL     [https://github.com/VidhiPattel]<br>
 OSHEEN RAWAT    [https://github.com/osheen-rawat]<br>
 PRATYUSHA GIRI  [https://github.com/2002pratyusha]<br>
 
+# Documentation
+
+The Documentation of this project has been uploaded <a href="Documentation/HOME-AI_documentation.pdf">here</a>
+The usage and other details related to this project are mentioned in this <a href="Documentation/HOME-AI_documentation.pdf">documentation</a>
+
 # SUPPORT THIS PROJECT
 
 ## Do you want to provide support ?
