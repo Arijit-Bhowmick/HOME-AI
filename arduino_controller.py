@@ -4,6 +4,7 @@ import commands_creater
 import command_performer
 import pyttsx3
 import serial
+import time
 
 try:
 	arduino_port = "COM3" # The port which the Arduino is using
@@ -15,8 +16,9 @@ except serial.serialutil.SerialException:
 	# the it will show the message and exit the program
 	commands_creater.banner() # Create the banner for this project
 	print("!!! Please Connect Your Arduino Board with this Device !!!\n\n")
-	#print("Starting without Arduino Interface")
-	command_performer.exit_program() # Exit the program if arduino board is not connected
+	print("Starting without Arduino Interface")
+	time.sleep(3) # Number of seconds to wait
+	#command_performer.exit_program() # Exit the program if arduino board is not connected
 
 def init_pin(arduino_new_pin_data):
 

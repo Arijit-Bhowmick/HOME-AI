@@ -111,5 +111,5 @@ def exit_program():
 
     # Print the below line and exit the program
 
-    print("Thankyou For USing ME !!!")
+    print("Thankyou For Using Me !!!")
     exit()
