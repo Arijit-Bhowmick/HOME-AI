@@ -15,8 +15,8 @@ except serial.serialutil.SerialException:
 	# the it will show the message and exit the program
 	commands_creater.banner() # Create the banner for this project
 	print("!!! Please Connect Your Arduino Board with this Device !!!\n\n")
-
-	command_performer.exit_program()
+	#print("Starting without Arduino Interface")
+	command_performer.exit_program() # Exit the program if arduino board is not connected
 
 def init_pin(arduino_new_pin_data):
 
