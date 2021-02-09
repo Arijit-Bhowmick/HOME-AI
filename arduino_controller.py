@@ -10,15 +10,30 @@ try:
 	arduino_port = "COM3" # The port which the Arduino is using
 	board = pyfirmata.Arduino(arduino_port)
 
+	# If Arduino is Connected with this System
+
+	print("Arduino Board Detected")
+	pyttsx3.speak("Arduino BOard Detected")
+
 except serial.serialutil.SerialException:
 
 	# If Arduino Board is not connected with your device
 	# the it will show the message and exit the program
 	commands_creater.banner() # Create the banner for this project
+
+	# print and speaks the written words
+
 	print("!!! Please Connect Your Arduino Board with this Device !!!\n\n")
-	#print("Starting without Arduino Interface")
-	#time.sleep(3) # Number of seconds to wait
-	command_performer.exit_program() # Exit the program if arduino board is not connected
+	pyttsx3.speak("Please Connect Your Arduino Board with this Device")
+	print("Arduino Device Not Detected!!!\n")
+	pyttsx3.speak("Arduino Device Not Detected")
+	print("Starting without Arduino Interface")
+	pyttsx3.speak("Starting without Arduino Interface")
+
+	time.sleep(3) # Number of seconds to wait
+	#command_performer.exit_program() # Exit the program if arduino board is not connected
+
+	arduino_check = "NOT_CONNECTED"
 
 def init_pin(arduino_new_pin_data):
 
@@ -71,3 +86,10 @@ def arduino_pin_controller(pin_number_and_state):
 
 		
 	board.digital[int(pin_number_and_state[0])].write(int(pin_number_and_state[1]))
+
+def arduino_connection_checker():
+
+	# Checks if Arduino is connected or not
+	# in this System
+
+	return arduino_check

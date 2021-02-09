@@ -76,20 +76,31 @@ def filter_command():
         #command = "on port eight"
         #command = 
         
-            for saved_arduino_command in arduino_commands_names:
+            if arduino_controller.arduino_check == "NOT_CONNECTED":
 
-            
-            #print(command)
+                # If Arduino is not connected with the system then
+                # it skips the Arduino functions
 
-            ## Arduino Command Area
+                pass
 
-                if (saved_arduino_command.upper() in command) == True:
+            elif arduino_controller.arduino_check == "CONNECTED":
 
-                # return pin_number and pin_state to initilize
-                    #print("Arduino command")
-                    return [arduino_key_value_dict[saved_arduino_command], "arduino"] # format -> [{03:1}, "arduino"]
-                else:
-                    continue
+                # If Arduino is connected then it checks the Arduino functions
+
+                for saved_arduino_command in arduino_commands_names:
+
+                
+                #print(command)
+
+                ## Arduino Command Area
+
+                    if (saved_arduino_command.upper() in command) == True:
+
+                    # return pin_number and pin_state to initilize
+                        #print("Arduino command")
+                        return [arduino_key_value_dict[saved_arduino_command], "arduino"] # format -> [{03:1}, "arduino"]
+                    else:
+                        continue
 
 ## *****************************************************************
 
