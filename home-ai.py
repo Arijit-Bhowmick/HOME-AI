@@ -83,7 +83,7 @@ def filter_command():
 
                 pass
 
-            elif arduino_controller.arduino_check == "CONNECTED":
+            else:
 
                 # If Arduino is connected then it checks the Arduino functions
 

@@ -7,13 +7,17 @@ import serial
 import time
 
 try:
+
+	commands_creater.banner() # Create the banner for this project
+
 	arduino_port = "COM3" # The port which the Arduino is using
 	board = pyfirmata.Arduino(arduino_port)
 
 	# If Arduino is Connected with this System
 
-	print("Arduino Board Detected")
-	pyttsx3.speak("Arduino BOard Detected")
+	statement = "Arduino Board Detected"
+	print(statement)
+	pyttsx3.speak(statement)
 
 except serial.serialutil.SerialException:
 
@@ -23,12 +27,16 @@ except serial.serialutil.SerialException:
 
 	# print and speaks the written words
 
-	print("!!! Please Connect Your Arduino Board with this Device !!!\n\n")
-	pyttsx3.speak("Please Connect Your Arduino Board with this Device")
-	print("Arduino Device Not Detected!!!\n")
-	pyttsx3.speak("Arduino Device Not Detected")
-	print("Starting without Arduino Interface")
-	pyttsx3.speak("Starting without Arduino Interface")
+
+	statement = "Please Connect Your Arduino Board with this Device" 
+	print(f"!!! {statement} !!!\n\n")
+	pyttsx3.speak(statement)
+	statement = "Arduino Device Not Detected"
+	print(f"!!! {statement} !!!\n")
+	pyttsx3.speak(statement)
+	statement = "Starting without Arduino Interface"
+	print(statement)
+	pyttsx3.speak(statement)
 
 	time.sleep(3) # Number of seconds to wait
 	#command_performer.exit_program() # Exit the program if arduino board is not connected
