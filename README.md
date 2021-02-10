@@ -7,11 +7,11 @@ Project is available on : <i>https://github.com/Arijit-Bhowmick/HOME-AI</i>
 
 # Members:
 
-ARIJIT BHOWMICK [https://github.com/Arijit-Bhowmick]<br>
-MADHAV BHARGAVA [https://github.com/madhavbhargava]<br>
-VIDHI PATEL     [https://github.com/VidhiPattel]<br>
-OSHEEN RAWAT    [https://github.com/osheen-rawat]<br>
-PRATYUSHA GIRI  [https://github.com/2002pratyusha]<br>
+<a href="https://github.com/Arijit-Bhowmick">ARIJIT BHOWMICK</a><br>
+<a href="https://github.com/madhavbhargava">MADHAV BHARGAVA</a><br>
+<a href="https://github.com/VidhiPattel">VIDHI PATEL</a><br>
+<a href="https://github.com/osheen-rawat">OSHEEN RAWAT</a><br>
+<a href="https://github.com/2002pratyusha">PRATYUSHA GIRI</a><br>
 
 # Documentation
 
@@ -23,4 +23,3 @@ The usage and other details related to this project are mentioned in this <a hre
 ## Do you want to provide support ?
 
 Then you can do so from <a href="https://arijit-bhowmick.github.io/supportive_webpages/support.html">here</a>
-
