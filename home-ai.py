@@ -76,14 +76,14 @@ def filter_command():
         #command = "on port eight"
         #command = 
         
-            if arduino_controller.arduino_check == "NOT_CONNECTED":
+            if arduino_controller.arduino_connection_checker() == "NOT_CONNECTED":
 
                 # If Arduino is not connected with the system then
                 # it skips the Arduino functions
 
                 pass
 
-            else:
+            elif arduino_controller.arduino_connection_checker() == "CONNECTED":
 
                 # If Arduino is connected then it checks the Arduino functions
 

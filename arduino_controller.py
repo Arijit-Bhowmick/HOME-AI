@@ -19,6 +19,8 @@ try:
 	print(statement)
 	pyttsx3.speak(statement)
 
+	arduino_check = "CONNECTED"
+
 except serial.serialutil.SerialException:
 
 	# If Arduino Board is not connected with your device

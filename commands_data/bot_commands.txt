@@ -2,4 +2,4 @@
 Open Explorer : start Explorer
 Shutdown computer : shutdown /s
 Restart Computer : shutdown /r
-Logoff Computer: shutdown /l
+Logoff Computer : shutdown /l

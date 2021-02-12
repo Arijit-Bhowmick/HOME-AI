@@ -53,7 +53,7 @@ def Bot_commands():
         #  
         # 
         #
-        if bot_comd[0] == "#":
+        if bot_comd.startswith("#") == "#":
             continue
 
         elif bot_comd[0] != "#":
@@ -62,7 +62,8 @@ def Bot_commands():
             bot_command_names += [bot_cmd_data_unrefined_1[0]] # ["Shutdown yourself"]
 
             # System commands list 
-            bot_system_command += bot_cmd_data_unrefined_1[1] # ["exit()"]
+            bot_system_command += [bot_cmd_data_unrefined_1[1]] # ["exit()"]
+            
 
 
             # Create Dictionary

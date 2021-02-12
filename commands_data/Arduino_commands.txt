@@ -1,16 +1,20 @@
 # # is use to start for any comment
 on port three > 3 : 1
 off port three > 3 : 0
-turn on light > 3 : 1
-turn off light > 3 : 0
+turn on bedroom light > 3 : 1
+turn off bedroom light > 3 : 0
 on port four > 4 : 1
 off port four > 4 : 0
-turn on fan > 4 : 1
-turn off fan > 4 : 0
+turn on bedroom fan > 4 : 1
+turn off bedroom fan > 4 : 0
 on port five > 5 : 1
 off port five > 5 : 0
+turn on kitchen light > 5 : 1
+turn off kitchen light > 5 : 0
 on port six > 6 : 1
 off port six > 6 : 0
+turn on bathroom light > 6 : 1
+turn off bathroom light > 6 : 0
 on port seven > 7 : 1
 off port seven > 7 : 0
 on port eight > 8 : 1
